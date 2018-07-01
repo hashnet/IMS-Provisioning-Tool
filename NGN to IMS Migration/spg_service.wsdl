@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:spg="http://www.huawei.com/SPG" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  targetNamespace="http://www.huawei.com/SPG">
+   <wsdl:import namespace="http://www.huawei.com/SPG" location="spg_schema.xsd"/>
+   <wsdl:types>
+      <xs:schema targetNamespace="http://new.webservice.namespace"
+                 elementFormDefault="qualified"/>
+   </wsdl:types>
+   <wsdl:message name="GenericHeader">
+      <wsdl:part name="header" element="spg:Authentication"/>
+   </wsdl:message>
+   <wsdl:message name="MessageIDHeader">
+      <wsdl:part name="header" element="spg:MessageID"/>
+   </wsdl:message>
+   <wsdl:message name="ResendFlagHeader">
+      <wsdl:part name="header" element="spg:ResendFlag"/>
+   </wsdl:message>
+        <wsdl:message name="AddAsbr_AGCFRequest">
+      <wsdl:part name="body" element="spg:AddAsbr_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="AddAsbr_AGCFResponse">
+      <wsdl:part name="body" element="spg:AddAsbr_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="ModAsbr_AGCFRequest">
+      <wsdl:part name="body" element="spg:ModAsbr_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="ModAsbr_AGCFResponse">
+      <wsdl:part name="body" element="spg:ModAsbr_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="RmvAsbr_AGCFRequest">
+      <wsdl:part name="body" element="spg:RmvAsbr_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="RmvAsbr_AGCFResponse">
+      <wsdl:part name="body" element="spg:RmvAsbr_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="LstAsbr_AGCFRequest">
+      <wsdl:part name="body" element="spg:LstAsbr_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="LstAsbr_AGCFResponse">
+      <wsdl:part name="body" element="spg:LstAsbr_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="AdbAsbr_AGCFRequest">
+      <wsdl:part name="body" element="spg:AdbAsbr_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="AdbAsbr_AGCFResponse">
+      <wsdl:part name="body" element="spg:AdbAsbr_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="MobAsbr_AGCFRequest">
+      <wsdl:part name="body" element="spg:MobAsbr_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="MobAsbr_AGCFResponse">
+      <wsdl:part name="body" element="spg:MobAsbr_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="RvbAsbr_AGCFRequest">
+      <wsdl:part name="body" element="spg:RvbAsbr_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="RvbAsbr_AGCFResponse">
+      <wsdl:part name="body" element="spg:RvbAsbr_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="AddSrvrgt_AGCFRequest">
+      <wsdl:part name="body" element="spg:AddSrvrgt_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="AddSrvrgt_AGCFResponse">
+      <wsdl:part name="body" element="spg:AddSrvrgt_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="RmvSrvrgt_AGCFRequest">
+      <wsdl:part name="body" element="spg:RmvSrvrgt_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="RmvSrvrgt_AGCFResponse">
+      <wsdl:part name="body" element="spg:RmvSrvrgt_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="LstSrvrgt_AGCFRequest">
+      <wsdl:part name="body" element="spg:LstSrvrgt_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="LstSrvrgt_AGCFResponse">
+      <wsdl:part name="body" element="spg:LstSrvrgt_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="AddMGW_AGCFRequest">
+      <wsdl:part name="body" element="spg:AddMGW_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="AddMGW_AGCFResponse">
+      <wsdl:part name="body" element="spg:AddMGW_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="ModMgw_AGCFRequest">
+      <wsdl:part name="body" element="spg:ModMgw_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="ModMgw_AGCFResponse">
+      <wsdl:part name="body" element="spg:ModMgw_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="RmvMGW_AGCFRequest">
+      <wsdl:part name="body" element="spg:RmvMGW_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="RmvMGW_AGCFResponse">
+      <wsdl:part name="body" element="spg:RmvMGW_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="LstMGW_AGCFRequest">
+      <wsdl:part name="body" element="spg:LstMGW_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="LstMGW_AGCFResponse">
+      <wsdl:part name="body" element="spg:LstMGW_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="AddMgwid_AGCFRequest">
+      <wsdl:part name="body" element="spg:AddMgwid_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="AddMgwid_AGCFResponse">
+      <wsdl:part name="body" element="spg:AddMgwid_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="ModMgwid_AGCFRequest">
+      <wsdl:part name="body" element="spg:ModMgwid_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="ModMgwid_AGCFResponse">
+      <wsdl:part name="body" element="spg:ModMgwid_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="RmvMgwid_AGCFRequest">
+      <wsdl:part name="body" element="spg:RmvMgwid_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="RmvMgwid_AGCFResponse">
+      <wsdl:part name="body" element="spg:RmvMgwid_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="AddAgcfmsn_AGCFRequest">
+      <wsdl:part name="body" element="spg:AddAgcfmsn_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="AddAgcfmsn_AGCFResponse">
+      <wsdl:part name="body" element="spg:AddAgcfmsn_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="RmvAgcfmsn_AGCFRequest">
+      <wsdl:part name="body" element="spg:RmvAgcfmsn_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="RmvAgcfmsn_AGCFResponse">
+      <wsdl:part name="body" element="spg:RmvAgcfmsn_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="LstAgcfmsn_AGCFRequest">
+      <wsdl:part name="body" element="spg:LstAgcfmsn_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="LstAgcfmsn_AGCFResponse">
+      <wsdl:part name="body" element="spg:LstAgcfmsn_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="AddAtkdnseg_AGCFRequest">
+      <wsdl:part name="body" element="spg:AddAtkdnseg_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="AddAtkdnseg_AGCFResponse">
+      <wsdl:part name="body" element="spg:AddAtkdnseg_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="RmvAtkdnseg_AGCFRequest">
+      <wsdl:part name="body" element="spg:RmvAtkdnseg_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="RmvAtkdnseg_AGCFResponse">
+      <wsdl:part name="body" element="spg:RmvAtkdnseg_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="LstAtkdnseg_AGCFRequest">
+      <wsdl:part name="body" element="spg:LstAtkdnseg_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="LstAtkdnseg_AGCFResponse">
+      <wsdl:part name="body" element="spg:LstAtkdnseg_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="LstCmts_AGCFRequest">
+      <wsdl:part name="body" element="spg:LstCmts_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="LstCmts_AGCFResponse">
+      <wsdl:part name="body" element="spg:LstCmts_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="AddMcasn_AGCFRequest">
+      <wsdl:part name="body" element="spg:AddMcasn_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="AddMcasn_AGCFResponse">
+      <wsdl:part name="body" element="spg:AddMcasn_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="RmvMcasn_AGCFRequest">
+      <wsdl:part name="body" element="spg:RmvMcasn_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="RmvMcasn_AGCFResponse">
+      <wsdl:part name="body" element="spg:RmvMcasn_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="ModMcasn_AGCFRequest">
+      <wsdl:part name="body" element="spg:ModMcasn_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="ModMcasn_AGCFResponse">
+      <wsdl:part name="body" element="spg:ModMcasn_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="LstMcasn_AGCFRequest">
+      <wsdl:part name="body" element="spg:LstMcasn_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="LstMcasn_AGCFResponse">
+      <wsdl:part name="body" element="spg:LstMcasn_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="AddMcasmap_AGCFRequest">
+      <wsdl:part name="body" element="spg:AddMcasmap_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="AddMcasmap_AGCFResponse">
+      <wsdl:part name="body" element="spg:AddMcasmap_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="RmvMcasmap_AGCFRequest">
+      <wsdl:part name="body" element="spg:RmvMcasmap_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="RmvMcasmap_AGCFResponse">
+      <wsdl:part name="body" element="spg:RmvMcasmap_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="LstMcasmap_AGCFRequest">
+      <wsdl:part name="body" element="spg:LstMcasmap_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="LstMcasmap_AGCFResponse">
+      <wsdl:part name="body" element="spg:LstMcasmap_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="AddAni_AGCFRequest">
+      <wsdl:part name="body" element="spg:AddAni_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="AddAni_AGCFResponse">
+      <wsdl:part name="body" element="spg:AddAni_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="LstAni_AGCFRequest">
+      <wsdl:part name="body" element="spg:LstAni_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="LstAni_AGCFResponse">
+      <wsdl:part name="body" element="spg:LstAni_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="ModAni_AGCFRequest">
+      <wsdl:part name="body" element="spg:ModAni_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="ModAni_AGCFResponse">
+      <wsdl:part name="body" element="spg:ModAni_AGCFResponse"/>
+   </wsdl:message>
+        <wsdl:message name="RmvAni_AGCFRequest">
+      <wsdl:part name="body" element="spg:RmvAni_AGCF"/>
+   </wsdl:message>
+   <wsdl:message name="RmvAni_AGCFResponse">
+      <wsdl:part name="body" element="spg:RmvAni_AGCFResponse"/>
+   </wsdl:message>
+    <wsdl:message name="OperationFault">
+      <wsdl:part name="fault" element="spg:OperationFault"/>
+   </wsdl:message>
+   <wsdl:portType name="SPG2800Port">
+        <wsdl:operation name="AddAsbr_AGCF">
+         <wsdl:input message="spg:AddAsbr_AGCFRequest"/>
+         <wsdl:output message="spg:AddAsbr_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="ModAsbr_AGCF">
+         <wsdl:input message="spg:ModAsbr_AGCFRequest"/>
+         <wsdl:output message="spg:ModAsbr_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="RmvAsbr_AGCF">
+         <wsdl:input message="spg:RmvAsbr_AGCFRequest"/>
+         <wsdl:output message="spg:RmvAsbr_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="LstAsbr_AGCF">
+         <wsdl:input message="spg:LstAsbr_AGCFRequest"/>
+         <wsdl:output message="spg:LstAsbr_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="AdbAsbr_AGCF">
+         <wsdl:input message="spg:AdbAsbr_AGCFRequest"/>
+         <wsdl:output message="spg:AdbAsbr_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="MobAsbr_AGCF">
+         <wsdl:input message="spg:MobAsbr_AGCFRequest"/>
+         <wsdl:output message="spg:MobAsbr_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="RvbAsbr_AGCF">
+         <wsdl:input message="spg:RvbAsbr_AGCFRequest"/>
+         <wsdl:output message="spg:RvbAsbr_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="AddSrvrgt_AGCF">
+         <wsdl:input message="spg:AddSrvrgt_AGCFRequest"/>
+         <wsdl:output message="spg:AddSrvrgt_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="RmvSrvrgt_AGCF">
+         <wsdl:input message="spg:RmvSrvrgt_AGCFRequest"/>
+         <wsdl:output message="spg:RmvSrvrgt_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="LstSrvrgt_AGCF">
+         <wsdl:input message="spg:LstSrvrgt_AGCFRequest"/>
+         <wsdl:output message="spg:LstSrvrgt_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="AddMGW_AGCF">
+         <wsdl:input message="spg:AddMGW_AGCFRequest"/>
+         <wsdl:output message="spg:AddMGW_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="ModMgw_AGCF">
+         <wsdl:input message="spg:ModMgw_AGCFRequest"/>
+         <wsdl:output message="spg:ModMgw_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="RmvMGW_AGCF">
+         <wsdl:input message="spg:RmvMGW_AGCFRequest"/>
+         <wsdl:output message="spg:RmvMGW_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="LstMGW_AGCF">
+         <wsdl:input message="spg:LstMGW_AGCFRequest"/>
+         <wsdl:output message="spg:LstMGW_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="AddMgwid_AGCF">
+         <wsdl:input message="spg:AddMgwid_AGCFRequest"/>
+         <wsdl:output message="spg:AddMgwid_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="ModMgwid_AGCF">
+         <wsdl:input message="spg:ModMgwid_AGCFRequest"/>
+         <wsdl:output message="spg:ModMgwid_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="RmvMgwid_AGCF">
+         <wsdl:input message="spg:RmvMgwid_AGCFRequest"/>
+         <wsdl:output message="spg:RmvMgwid_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="AddAgcfmsn_AGCF">
+         <wsdl:input message="spg:AddAgcfmsn_AGCFRequest"/>
+         <wsdl:output message="spg:AddAgcfmsn_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="RmvAgcfmsn_AGCF">
+         <wsdl:input message="spg:RmvAgcfmsn_AGCFRequest"/>
+         <wsdl:output message="spg:RmvAgcfmsn_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="LstAgcfmsn_AGCF">
+         <wsdl:input message="spg:LstAgcfmsn_AGCFRequest"/>
+         <wsdl:output message="spg:LstAgcfmsn_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="AddAtkdnseg_AGCF">
+         <wsdl:input message="spg:AddAtkdnseg_AGCFRequest"/>
+         <wsdl:output message="spg:AddAtkdnseg_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="RmvAtkdnseg_AGCF">
+         <wsdl:input message="spg:RmvAtkdnseg_AGCFRequest"/>
+         <wsdl:output message="spg:RmvAtkdnseg_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="LstAtkdnseg_AGCF">
+         <wsdl:input message="spg:LstAtkdnseg_AGCFRequest"/>
+         <wsdl:output message="spg:LstAtkdnseg_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="LstCmts_AGCF">
+         <wsdl:input message="spg:LstCmts_AGCFRequest"/>
+         <wsdl:output message="spg:LstCmts_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="AddMcasn_AGCF">
+         <wsdl:input message="spg:AddMcasn_AGCFRequest"/>
+         <wsdl:output message="spg:AddMcasn_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="RmvMcasn_AGCF">
+         <wsdl:input message="spg:RmvMcasn_AGCFRequest"/>
+         <wsdl:output message="spg:RmvMcasn_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="ModMcasn_AGCF">
+         <wsdl:input message="spg:ModMcasn_AGCFRequest"/>
+         <wsdl:output message="spg:ModMcasn_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="LstMcasn_AGCF">
+         <wsdl:input message="spg:LstMcasn_AGCFRequest"/>
+         <wsdl:output message="spg:LstMcasn_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="AddMcasmap_AGCF">
+         <wsdl:input message="spg:AddMcasmap_AGCFRequest"/>
+         <wsdl:output message="spg:AddMcasmap_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="RmvMcasmap_AGCF">
+         <wsdl:input message="spg:RmvMcasmap_AGCFRequest"/>
+         <wsdl:output message="spg:RmvMcasmap_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="LstMcasmap_AGCF">
+         <wsdl:input message="spg:LstMcasmap_AGCFRequest"/>
+         <wsdl:output message="spg:LstMcasmap_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="AddAni_AGCF">
+         <wsdl:input message="spg:AddAni_AGCFRequest"/>
+         <wsdl:output message="spg:AddAni_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="LstAni_AGCF">
+         <wsdl:input message="spg:LstAni_AGCFRequest"/>
+         <wsdl:output message="spg:LstAni_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="ModAni_AGCF">
+         <wsdl:input message="spg:ModAni_AGCFRequest"/>
+         <wsdl:output message="spg:ModAni_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+        <wsdl:operation name="RmvAni_AGCF">
+         <wsdl:input message="spg:RmvAni_AGCFRequest"/>
+         <wsdl:output message="spg:RmvAni_AGCFResponse"/>
+         <wsdl:fault message="spg:OperationFault" name="OperationFault"/>
+      </wsdl:operation>
+    </wsdl:portType>
+   <wsdl:binding name="SPG2800Binding" type="spg:SPG2800Port">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="AddAsbr_AGCF">
+         <soap:operation soapAction="urn#AddAsbr_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="ModAsbr_AGCF">
+         <soap:operation soapAction="urn#ModAsbr_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="RmvAsbr_AGCF">
+         <soap:operation soapAction="urn#RmvAsbr_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="LstAsbr_AGCF">
+         <soap:operation soapAction="urn#LstAsbr_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="AdbAsbr_AGCF">
+         <soap:operation soapAction="urn#AdbAsbr_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="MobAsbr_AGCF">
+         <soap:operation soapAction="urn#MobAsbr_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="RvbAsbr_AGCF">
+         <soap:operation soapAction="urn#RvbAsbr_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="AddSrvrgt_AGCF">
+         <soap:operation soapAction="urn#AddSrvrgt_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="RmvSrvrgt_AGCF">
+         <soap:operation soapAction="urn#RmvSrvrgt_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="LstSrvrgt_AGCF">
+         <soap:operation soapAction="urn#LstSrvrgt_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="AddMGW_AGCF">
+         <soap:operation soapAction="urn#AddMGW_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="ModMgw_AGCF">
+         <soap:operation soapAction="urn#ModMgw_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="RmvMGW_AGCF">
+         <soap:operation soapAction="urn#RmvMGW_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="LstMGW_AGCF">
+         <soap:operation soapAction="urn#LstMGW_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="AddMgwid_AGCF">
+         <soap:operation soapAction="urn#AddMgwid_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="ModMgwid_AGCF">
+         <soap:operation soapAction="urn#ModMgwid_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="RmvMgwid_AGCF">
+         <soap:operation soapAction="urn#RmvMgwid_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="AddAgcfmsn_AGCF">
+         <soap:operation soapAction="urn#AddAgcfmsn_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="RmvAgcfmsn_AGCF">
+         <soap:operation soapAction="urn#RmvAgcfmsn_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="LstAgcfmsn_AGCF">
+         <soap:operation soapAction="urn#LstAgcfmsn_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="AddAtkdnseg_AGCF">
+         <soap:operation soapAction="urn#AddAtkdnseg_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="RmvAtkdnseg_AGCF">
+         <soap:operation soapAction="urn#RmvAtkdnseg_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="LstAtkdnseg_AGCF">
+         <soap:operation soapAction="urn#LstAtkdnseg_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="LstCmts_AGCF">
+         <soap:operation soapAction="urn#LstCmts_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="AddMcasn_AGCF">
+         <soap:operation soapAction="urn#AddMcasn_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="RmvMcasn_AGCF">
+         <soap:operation soapAction="urn#RmvMcasn_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="ModMcasn_AGCF">
+         <soap:operation soapAction="urn#ModMcasn_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="LstMcasn_AGCF">
+         <soap:operation soapAction="urn#LstMcasn_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="AddMcasmap_AGCF">
+         <soap:operation soapAction="urn#AddMcasmap_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="RmvMcasmap_AGCF">
+         <soap:operation soapAction="urn#RmvMcasmap_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="LstMcasmap_AGCF">
+         <soap:operation soapAction="urn#LstMcasmap_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="AddAni_AGCF">
+         <soap:operation soapAction="urn#AddAni_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="LstAni_AGCF">
+         <soap:operation soapAction="urn#LstAni_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="ModAni_AGCF">
+         <soap:operation soapAction="urn#ModAni_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+        <wsdl:operation name="RmvAni_AGCF">
+         <soap:operation soapAction="urn#RmvAni_AGCF"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+            <soap:header message="spg:GenericHeader" part="header" use="literal"/>
+            <soap:header message="spg:ResendFlagHeader" part="header" use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+            <soap:header message="spg:MessageIDHeader" part="header" use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="OperationFault">
+            <soap:fault name="OperationFault" use="literal"/>
+         </wsdl:fault>
+      </wsdl:operation>
+    </wsdl:binding>
+   <wsdl:service name="SPG2800Service">
+      <wsdl:port name="SPG2800Port" binding="spg:SPG2800Binding">
+         <soap:address location="http://www.huawei.com/spg"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>
